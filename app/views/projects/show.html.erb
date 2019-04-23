@@ -19,13 +19,14 @@
 
 <p>
   <%= link_to 'More Information about the Project', @project.webpage %>
+  <%= social_share_button_tag(@article.title) %>
 </p>
 
 
 <% if user_signed_in? %>
     <%= link_to 'Edit Project', edit_project_path(@project) %>
 <% end %>
- 
+
 <h2>Improvement Ideas</h2>
 
 <% @project.improvements.each do |improvement| %>
@@ -68,7 +69,7 @@
 
 <%= render "improvements/form" %>
 <p>
-<p>	
+<p>
 
 <%= link_to 'Back', projects_path, class: "btn btn-primary" %>
 

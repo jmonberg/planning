@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :projects do
-    resources :improvements 
+    resources :improvements
   end
 
   resources :principles
@@ -15,7 +15,5 @@ Rails.application.routes.draw do
 #  authenticated :user do |variable|
 #    root 'dashboard#index', as: 'authenticated_root'
 #  end
-
   root 'welcome#index'
-
 end

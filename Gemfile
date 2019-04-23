@@ -9,6 +9,7 @@ gem 'sqlite3', '~> 1.3.6'
 
 gem 'mysql2'
 
+gem 'social-share-button', '~> 1.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -63,5 +64,3 @@ group :development do
 end
 
 gem 'puma'
-
-

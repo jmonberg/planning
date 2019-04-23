@@ -19,6 +19,7 @@
 
 <p>
   <%= link_to 'More Information about the Project', @project.webpage %>
+  <%= social_share_button_tag(@article.title) %>
 </p>
 
 <h2>Add an improvement:</h2>
@@ -43,7 +44,7 @@
     <%= f.submit %>
   </div>
 <% end %>
-	
+
 <h2>Improvements</h2>
 <% @project.improvements.each do |improvement| %>
   <p>
