@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171105222017) do
+ActiveRecord::Schema.define(version: 20190429181034) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -26,6 +26,17 @@ ActiveRecord::Schema.define(version: 20171105222017) do
     t.integer  "image_file_size",    limit: 8
     t.datetime "image_updated_at"
   end
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "message_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["message_id"], name: "index_comments_on_message_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "improvements", force: :cascade do |t|
     t.string   "title"
@@ -44,6 +55,14 @@ ActiveRecord::Schema.define(version: 20171105222017) do
 
   add_index "improvements", ["project_id"], name: "index_improvements_on_project_id"
   add_index "improvements", ["projects_id"], name: "index_improvements_on_projects_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
 
   create_table "principles", force: :cascade do |t|
     t.string   "title"
