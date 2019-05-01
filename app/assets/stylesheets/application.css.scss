@@ -1,2 +1,179 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/*Styling*/
+
+body {
+	background-color: #fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;	
+}
+
+.btn-custom {
+	background-color: #286090;
+	color: #fff;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+	border-radius: 8px;
+	padding: 10px 20px;
+	&:hover {
+		color: #fff;
+		transition: 0.5s;
+		background-color: #132c42;
+		text-decoration: none;
+	}
+}
+
+.btn:hover {
+	transition: 0.5s;
+	color: #fff;
+	background-color: #132c42;
+}
+
+
+/* Navbar styles */
+
+.navbar {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: uppercase;
+}
+
+.navbar-default {
+
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #fff;
+
+	.navbar-nav > li > a {
+		color: #222;
+	}
+
+	.navbar-link {
+		color: #222;
+	}
+
+	.navbar-brand {
+		color: #222;
+		letter-spacing: 1.1px;
+	}
+
+}
+
+
+/* Links styles */
+
+.links {
+	margin-top: 20px;
+	.btn-default {
+		color: #0a8fd5;
+	}
+}
+
+
+/* Message styles */
+
+.message {
+	box-sizing: border-box;
+	background-color: #d9f1ff;
+	margin-bottom: 25px;
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 1.4em 1.4em;
+	height: 150px;
+	border: 4px solid #286090;
+	border-radius: 4px;
+
+	.message-title {
+		font-size: 1.5em;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		font-weight: 300;
+		margin-top: 0;
+		color: #132c42;
+		margin-bottom: 25px;
+	}
+
+	.btn-custom {
+		margin-top: 20px;
+	}
+
+}
+
+.message:nth-child(4n) {
+	clear: left;
+}
+
+/* Message show-page styles */
+
+.message-show {
+	box-sizing: border-box;
+	background-color: #d9f1ff;
+	padding: 2.0em 1.5em;
+	border: 4px solid #204d74;
+	border-radius: 4px;
+	color: #132c42;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 300;
+
+	h2 {
+		margin-top: 0;
+	}
+
+	.message-desc {
+		font-size: 1.1em;
+		line-height: 1.75;
+		margin-bottom: 50px;
+	}
+
+	.message-posted-by {
+		color: #132c42;
+		font-size: 0.9em;
+	}
+
+	.reply-to-msg {
+		margin-top: 50px;
+	}
+
+}
+
+
+/* Comment styles */
+
+.comment {
+	border-bottom: 1px solid #132c42;
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	.comment-content {
+		font-size: 1.25em;
+	}	
+
+	.comment-posted-by {
+		color: #132c42;
+		font-size: 0.8em;
+	}
+
+	.links {
+		margin-top: 15px;
+		a {
+			color: #0a8fd5;
+			margin-right: 15px;
+		}
+	}
+}
+
+.new-post-btn {
+	position: fixed;
+	left: 0;
+	top: 67px;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.lower-new-post-btn {
+	padding-top: 30px;
+}

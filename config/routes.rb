@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  resources :messages do
+  	resources :comments
+  end
   resources :projects do
     resources :improvements 
   end
