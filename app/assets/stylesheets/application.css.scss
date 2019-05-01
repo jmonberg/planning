@@ -1,3 +1,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "social-share-button";
+$size: 25px;
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
