@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
-	before_action :find_message
+	before_action :find_message, only: [:create, :edit, :update, :destroy]
 	before_action :find_comment, only: [:edit, :update, :destroy]
-	before_action :authenticate_user!
 
 	def create
+		# creates a comment with respect to the message
 		@comment = @message.comments.create(comment_params)
 		@comment.user_id = current_user.id
 
@@ -17,17 +17,17 @@ class CommentsController < ApplicationController
 	def edit
 	end
 
-	def destroy
-		@comment.destroy
-		redirect_to message_path(@message)
-	end
-
 	def update
 		if @comment.update(comment_params)
 			redirect_to message_path(@message)
 		else
 			render 'edit'
 		end
+	end
+
+	def destroy
+		@comment.destroy
+		redirect_to message_path(@message)
 	end
 
 	private
@@ -42,6 +42,6 @@ class CommentsController < ApplicationController
 
 		def find_comment
 			@comment = @message.comments.find(params[:id])
-		end			
+		end
 
 end
