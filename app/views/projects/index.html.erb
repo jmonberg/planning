@@ -16,7 +16,7 @@
       <% if project.image.exists? %>
         <%=(image_tag project.image.url(:medium), class: 'img-responsive img-medium') %>
       <% end %>
-    <div class="card-prev-text">
+    <div class="card-prev-text project-title">
       <h3><%= project.title %></h3>
       <% if user_signed_in? %>
              <%= link_to 'Edit', edit_project_path(project) %>
