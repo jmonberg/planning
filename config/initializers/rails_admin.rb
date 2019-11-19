@@ -1,15 +1,24 @@
 RailsAdmin.config do |config|
+  config.main_app_name = ["Admin Panel", "Website"]
 
+  config.authorize_with do
+    config.authenticate_with do
+      warden.authenticate! scope: :user
+   unless current_user.admin == true
+   redirect_to main_app.root_path
+ end
+end
+end
   ### Popular gems integration
 
   ## == Devise ==
   # config.authenticate_with do
   #   warden.authenticate! scope: :user
-  # end
+#   end
   # config.current_user_method(&:current_user)
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+   # config.authorize_with :cancan
 
   ## == Pundit ==
   # config.authorize_with :pundit
